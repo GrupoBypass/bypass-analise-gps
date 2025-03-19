@@ -1,4 +1,5 @@
 import random
+import math
 
 
 def get_position():
@@ -10,4 +11,5 @@ def get_position():
 
 def process_data(point_a, point_b):
     # Calcula a distancia entre dois pontos
-    return 0
+    print ("process_data")    
+    return math.sqrt((point_b[0] - point_a[0]) ** 2 + (point_b[1] - point_a[1]) ** 2 + (point_b[2] - point_a[2]) ** 2)

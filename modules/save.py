@@ -24,7 +24,7 @@ def get_engine(connection_string):
 def save_results(n, memory_result, time_result):
     # Cria um df com os resultados e salva em um csv e banco de dados mysql
     df = pd.DataFrame(
-        {"n": n, "memory_result": memory_result, "time_result": time_result}
+        {"memory_result": memory_result, "time_result": time_result}
     )
 
     df.to_csv("results.csv", index=False)
@@ -34,6 +34,6 @@ def save_results(n, memory_result, time_result):
     df.to_sql(
         name=table_name,
         con=get_engine(get_connection()),
-        if_exists="replace",
+        if_exists="append",
         index=False,
     )
