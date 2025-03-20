@@ -15,7 +15,8 @@ def plot_results(n, memory_result, time_result):
     ax2 = ax1.twinx()
     color = "tab:blue"
     ax2.set_ylabel("Tempo de execução (segundos)", color=color)
-    ax2.plot(x_values, time_result, "s-", color=color, label="Tempo de execução")
+    ax2.plot(x_values, time_result, "s-",
+             color=color, label="Tempo de execução")
     ax2.tick_params(axis="y", labelcolor=color)
 
     fig.tight_layout()

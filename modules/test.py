@@ -11,11 +11,11 @@ def test_process(func):
 
 
 def get_results(n, func):
-    print ("get_resuls start")
+    print("get_resuls start")
     memory_result = []
     time_result = []
 
-    for iteration in range(0,n):
+    for iteration in range(0, n):
         mem_usage, process_time = memory_usage(
             (test_process, (func,), {}), max_usage=True, retval=True
         )
@@ -23,5 +23,5 @@ def get_results(n, func):
         memory_result.append(mem_usage)
         time_result.append(process_time)
 
-    print ("get_resuls end")
+    print("get_resuls end")
     return memory_result, time_result

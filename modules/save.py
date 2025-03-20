@@ -9,7 +9,7 @@ def get_connection():
     try:
         username = os.getenv("DB_USER")
         password = os.getenv("DB_PASS")
-        host = os.getenv("DB_HOST")
+        host = "mysql:3306"
         database = os.getenv("DB_NAME")
     except KeyError:
         print("Variáveis de ambiente não definidas")
@@ -22,10 +22,7 @@ def get_engine(connection_string):
 
 
 def save_results(n, memory_result, time_result):
-    # Cria um df com os resultados e salva em um csv e banco de dados mysql
-    df = pd.DataFrame(
-        {"memory_result": memory_result, "time_result": time_result}
-    )
+    df = pd.DataFrame({"memory_result": memory_result, "time_result": time_result})
 
     df.to_csv("results.csv", index=False)
 
