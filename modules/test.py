@@ -1,12 +1,13 @@
 from memory_profiler import memory_usage
-import algas
+from modules import algas
 import time
 
 
 def test_process(n, func):
     inicio = time.time()
-    for i in range(1, n):
-        func(algas.sum_of_n_init(i))
+    r = [algas.sum_of_n_init(i) for i in range(1, n + 1)]
+    for i in r:
+        func()
     fim = time.time()
     tempo_processamento = fim - inicio
     return tempo_processamento
