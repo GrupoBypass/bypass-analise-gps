@@ -27,7 +27,6 @@ def save_results(n, memory_result, time_result):
 
     df.to_csv("results.csv", index=False)
 
-    # SQL part
     table_name = "results"
     df.to_sql(
         name=table_name,
