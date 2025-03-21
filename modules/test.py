@@ -1,13 +1,14 @@
 from memory_profiler import memory_usage
 from modules import algas
+from modules.sensor import gps
 import time
 
 
-def test_process(n, func):
+def test_process(n):
     inicio = time.time()
     r = [algas.sum_of_n_init(i) for i in range(1, n + 1)]
     for i in r:
-        func(i)
+        gps.calc_distance(i)
     fim = time.time()
     tempo_processamento = fim - inicio
     return tempo_processamento

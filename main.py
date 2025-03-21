@@ -5,9 +5,7 @@ from modules.sensor import gps
 if __name__ == "__main__":
 
     n = 100
-    res = t.get_results(
-        n, lambda: gps.calc_distance())
-    )
+    res = t.get_results(n, lambda: gps.calc_distance())
 
     print(res)
 
