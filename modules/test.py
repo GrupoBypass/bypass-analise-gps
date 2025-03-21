@@ -7,7 +7,7 @@ def test_process(n, func):
     inicio = time.time()
     r = [algas.sum_of_n_init(i) for i in range(1, n + 1)]
     for i in r:
-        func()
+        func(i)
     fim = time.time()
     tempo_processamento = fim - inicio
     return tempo_processamento

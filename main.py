@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     n = 100
     res = t.get_results(
-        n, lambda: p.process_data(gps.get_position(), gps.get_position())
+        n, lambda: gps.calc_distance())
     )
 
     print(res)
