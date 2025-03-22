@@ -21,7 +21,7 @@ def get_results(n):
 
     for iteration in range(0, n):
         mem_usage, process_time = memory_usage(
-            (test_process, (n, ), {}), max_usage=True, retval=True
+            (test_process, (iteration, ), {}), max_usage=True, retval=True
         )
 
         memory_result.append(mem_usage)
